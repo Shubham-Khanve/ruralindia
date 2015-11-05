@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     url(r'^$', 'fertilizer.views.home', name='home'),
     url(r'^thankyou/', 'fertilizer.views.thankyou', name='thankyou'),
     url(r'^states/', 'fertilizer.views.states', name='states'),
-    url(r'^stats/', 'fertilizer.views.stats', name='stats'),
+    url(r'^register/', 'fertilizer.views.register', name='register'),
     
     
     #url(r'^flot/', 'stats.views.statitics', name='stats'),

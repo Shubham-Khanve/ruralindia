@@ -1,13 +1,17 @@
 from django import forms
-from .models import fertilizer,avail #, fertilizer_a
-
-class fertilizerform(forms.ModelForm):
+from .models import name, email, password #, fertilizer_a
+       
+class nameform(forms.ModelForm):
     class Meta:
-        model = fertilizer
+        model = name
         
-class availform(forms.ModelForm):
+class emailform(forms.ModelForm):
     class Meta:
-        model = avail
+        model = email
+        
+class passwordform(forms.ModelForm):
+    class Meta:
+        model = password
         #code
     
     #code

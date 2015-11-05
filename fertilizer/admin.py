@@ -1,17 +1,23 @@
 from django.contrib import admin
-from .models import fertilizer, avail #, fertilizer_a
+from .models import name, email, password #, fertilizer_a
 
-class fertilizeradmin(admin.ModelAdmin):
+class nameadmin(admin.ModelAdmin):
     class Meta:
-        model = fertilizer
-    
-admin.site.register(fertilizer, fertilizeradmin)
-
-class availadmin(admin.ModelAdmin):
-    class Meta:
-        model = avail
+        model = name
         
-admin.site.register(avail, availadmin)
+admin.site.register(name, nameadmin)
+
+class emailadmin(admin.ModelAdmin):
+    class Meta:
+        model = email
+        
+admin.site.register(email, emailadmin)
+
+class passwordadmin(admin.ModelAdmin):
+    class Meta:
+        model = password
+        
+admin.site.register(password, passwordadmin)
 
 
 

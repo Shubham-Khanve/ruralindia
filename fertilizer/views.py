@@ -1,24 +1,11 @@
 from django.shortcuts import render, render_to_response, RequestContext
-from .forms import fertilizerform, availform #, fertilizeraform
+from .forms import nameform, emailform, passwordform #, fertilizeraform
 from django.conf import settings
 
 def home(request):
-    form = fertilizerform(request.POST)
-    avail = availform(request.POST)
-    if form.is_valid():
-        save_it = form.save(commit=False)
-        save_it.save()
     return render_to_response("index.html",
                               locals(),
                               context_instance=RequestContext(request))
-
-def thankyou(request):
-    form = fertilizerform(request.POST)
-    avail = availform(request.POST)
-    if form.is_valid():
-        save_it = form.save(commit=False)
-        save_it.save()
-    return render_to_response("thankyou.html")
 
 def states(request):
     return render_to_response("states.html",
@@ -29,6 +16,20 @@ def stats(request):
     return render_to_response("stats.html",
                               locals(),
                               context_instance=RequestContext(request))
+
+def register(request):
+    name = nameform(request.POST)
+    email = emailform(request.POST)
+    password = passwordform(request.POST)
+    return render_to_response("register.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+def thankyou(request):
+    name = nameform(request.POST)
+    email = emailform(request.POST)
+    password = passwordform(request.POST)
+    return render_to_response("thankyou.html")
 
 
 #def zero(request):
